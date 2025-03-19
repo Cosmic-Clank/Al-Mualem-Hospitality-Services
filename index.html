@@ -1,0 +1,808 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Al Mualem Shisha</title>
+
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        .animate-item {
+            opacity: 0;
+            transform: translateY(30px);
+        }
+    </style>
+</head>
+
+<body class="bg-white text-black">
+
+    <!-- Navbar -->
+    <nav class="bg-gray-200 p-4 shadow-lg fixed w-full top-0 z-50">
+        <div class="container mx-auto flex justify-between items-center">
+            <!-- Logo and Brand Name -->
+            <div class="flex items-center space-x-3">
+                <img src="/public/images/logo.png" alt="Logo" class="w-10 h-10 md:w-12 md:h-12">
+                <h1 class="text-lg md:text-xl font-bold">Al Mualem Shisha</h1>
+            </div>
+
+            <!-- Desktop Menu -->
+            <ul class="hidden md:flex space-x-6">
+                <li><a href="#home" class="hover:text-cyan-600 transition duration-300">Home</a></li>
+                <li><a href="#about" class="hover:text-cyan-600 transition duration-300">About</a></li>
+                <li><a href="#contact" class="hover:text-cyan-600 transition duration-300">Contact</a></li>
+            </ul>
+
+            <!-- Mobile Menu Button -->
+            <button id="menu-btn" class="md:hidden text-2xl focus:outline-none">☰</button>
+        </div>
+
+        <!-- Mobile Menu (Hidden by Default) -->
+        <ul id="mobile-menu" class="hidden flex flex-col bg-gray-200 p-4 space-y-3 md:hidden">
+            <li><a href="#home" class="hover:text-cyan-600 transition duration-300">Home</a></li>
+            <li><a href="#about" class="hover:text-cyan-600 transition duration-300">About</a></li>
+            <li><a href="#contact" class="hover:text-cyan-600 transition duration-300">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="relative h-screen flex justify-center items-center">
+        <div class="relative w-full h-full flex flex-col md:flex-row">
+            <!-- Left Image -->
+            <div class="w-full md:w-1/2 h-1/2 md:h-full bg-cover bg-center"
+                style="background-image: url('/public/images/hero1.jpg');"></div>
+
+            <!-- Right Image -->
+            <div class="w-full md:w-1/2 h-1/2 md:h-full bg-cover bg-center"
+                style="background-image: url('/public/images/hero2.jpg');"></div>
+        </div>
+
+        <!-- Logo Overlay -->
+        <div class="absolute inset-0 flex justify-center items-center">
+            <img src="/public/images/logo.png" alt="Logo" class="w-32 h-32 md:w-56 md:h-56 rounded-full shadow-lg">
+        </div>
+    </section>
+
+    <!-- New Section -->
+    <section id="about" class="py-16 px-6 md:px-20 flex flex-col md:flex-row items-center justify-center">
+        <div class="md:w-1/2 flex flex-col items-center text-center md:text-left">
+            <img src="/public/images/logo.png" alt="Brand Logo"
+                class="w-40 h-40 md:w-52 md:h-52 mb-6 opacity-0 animate-item">
+            <p class="text-gray-700 text-lg opacity-0 animate-item">Combining our decades of experience in the Shisha
+                tobacco industry and hospitality to create a unique experience for the shisha lovers.</p>
+            <p class="text-gray-700 text-lg mt-4 opacity-0 animate-item"><strong class="text-black">Al Mualem</strong>
+                aims to provide Turnkey Shisha services to Hotels, Lounges and Restaurants, offering unique customized
+                flavors and blends created by our experienced and innovative Mixologists.</p>
+        </div>
+        <div class="md:w-1/2 mt-8 md:mt-0">
+            <img src="/public/images/section2-1.jpg" alt="Shisha Experience"
+                class="w-full h-auto rounded-lg shadow-lg opacity-0 animate-item">
+        </div>
+    </section>
+
+    <section class="py-16 px-6 md:px-16">
+        <div class="text-center mb-12">
+            <h2 class="text-4xl md:text-5xl font-bold text-gray-800">What We <span class="text-red-600">Offer</span>
+            </h2>
+            <p class="text-gray-600 mt-4 max-w-2xl mx-auto">
+                We provide premium shisha experiences, high-quality flavors, and excellent hospitality services for
+                lounges and restaurants.
+            </p>
+        </div>
+
+        <!-- Offer Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+
+            <!-- Offer Item 1 -->
+            <div class="offer-card p-8 bg-gray-100 rounded-xl shadow-lg text-center">
+                <h3 class="text-xl font-semibold mb-2">Premium Shisha Experience</h3>
+                <p class="text-gray-600">Enjoy the finest selection of shisha flavors crafted for a luxurious
+                    experience.</p>
+            </div>
+
+            <!-- Offer Item 2 -->
+            <div class="offer-card p-8 bg-gray-100 rounded-xl shadow-lg text-center">
+                <h3 class="text-xl font-semibold mb-2">Unique Flavors by Mixologists</h3>
+                <p class="text-gray-600">Customized blends designed by expert mixologists for a unique experience.</p>
+            </div>
+
+            <!-- Offer Item 3 -->
+            <div class="offer-card p-8 bg-gray-100 rounded-xl shadow-lg text-center">
+                <h3 class="text-xl font-semibold mb-2">Optimized Lounge Revenue</h3>
+                <p class="text-gray-600">Maximize your lounge's profitability with our strategic shisha solutions.</p>
+            </div>
+
+            <!-- Offer Item 4 -->
+            <div class="offer-card p-8 bg-gray-100 rounded-xl shadow-lg text-center">
+                <h3 class="text-xl font-semibold mb-2">Modern Shisha Devices</h3>
+                <p class="text-gray-600">Top-tier, stylish shisha setups to enhance the ambiance of your space.</p>
+            </div>
+
+            <!-- Offer Item 5 -->
+            <div class="offer-card p-8 bg-gray-100 rounded-xl shadow-lg text-center">
+                <h3 class="text-xl font-semibold mb-2">Social Media Promotions</h3>
+                <p class="text-gray-600">Boost your brand’s visibility with targeted social media marketing.</p>
+            </div>
+
+            <!-- Offer Item 6 -->
+            <div class="offer-card p-8 bg-gray-100 rounded-xl shadow-lg text-center">
+                <h3 class="text-xl font-semibold mb-2">Highest Hygiene Standards</h3>
+                <p class="text-gray-600">We follow strict hygiene protocols to ensure a clean and safe experience.</p>
+            </div>
+
+        </div>
+    </section>
+
+    <section class="py-16 px-6 md:px-16 flex flex-col md:flex-row items-center justify-between">
+        <!-- Left Side: Heading -->
+        <div class="md:w-1/3 mb-8 md:mb-0">
+            <h2 class="text-4xl md:text-5xl font-bold text-gray-800 animate-item">
+                <span class="text-gray-500">Business</span> Model
+            </h2>
+        </div>
+
+        <!-- Right Side: Business Model Diagram -->
+        <div class="md:w-2/3 flex justify-center">
+            <img src="/public/images/section4-1.jpg" alt="Business Model"
+                class="w-full max-w-4xl rounded-lg animate-item">
+        </div>
+    </section>
+
+    <section class="relative py-16 px-6 md:px-16 text-white text-center"
+        style="background-image: url('public/images/section5-bg.jpg'); background-size: cover; background-position: center;">
+
+        <!-- Section Heading -->
+        <div class="mb-8">
+            <h2 class="text-4xl md:text-5xl font-bold animate-item">Our Customers</h2>
+        </div>
+
+        <!-- Responsive Layout -->
+        <div class="flex flex-col md:flex-row items-center justify-center">
+
+            <!-- Left Logos (Stack on Mobile) -->
+            <div
+                class="flex flex-row md:flex-col justify-between md:gap-8 items-center md:items-end md:pr-6 w-full md:w-auto">
+                <img src="/public/images/section5-2.jpg" alt="Company Logo" class="w-28 md:w-36 animate-item">
+                <img src="/public/images/section5-3.jpg" alt="Company Logo" class="w-28 md:w-36 animate-item">
+                <img src="/public/images/section5-4.jpg" alt="Company Logo" class="w-28 md:w-36 animate-item">
+            </div>
+
+            <!-- Center Image (Main Image) -->
+            <div class="mx-4 md:mx-12 my-8 md:my-0">
+                <img src="/public/images/section5-1.jpg" alt="Team Image"
+                    class="w-full max-w-3xl rounded-lg animate-item">
+            </div>
+
+            <!-- Right Logos (Stack on Mobile) -->
+            <div
+                class="flex flex-row md:flex-col justify-between md:gap-8 items-center md:items-start md:pl-6 w-full md:w-auto">
+                <img src="/public/images/section5-5.jpg" alt="Company Logo" class="w-28 md:w-36 animate-item">
+                <img src="/public/images/section5-6.jpg" alt="Company Logo" class="w-28 md:w-36 animate-item">
+                <img src="/public/images/section5-7.jpg" alt="Company Logo" class="w-28 md:w-36 animate-item">
+            </div>
+
+        </div>
+    </section>
+
+    <section class="relative py-16 px-6 md:px-16 text-white text-center"
+        style="background-image: url('public/images/section5-bg.jpg'); background-size: cover; background-position: center;">
+
+        <!-- Section Heading -->
+        <div class="mb-8">
+            <h2 class="text-4xl md:text-5xl font-bold animate-item">Our Customers</h2>
+        </div>
+
+        <!-- Logos Grid -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-8 place-items-center">
+
+            <img src="/public/images/section6-1.jpg" alt="Customer Logo" class="w-40 md:w-48 animate-item">
+            <img src="/public/images/section6-2.jpg" alt="Customer Logo" class="w-40 md:w-48 animate-item">
+            <img src="/public/images/section6-3.jpg" alt="Customer Logo" class="w-40 md:w-48 animate-item">
+            <img src="/public/images/section6-4.jpg" alt="Customer Logo" class="w-40 md:w-48 animate-item">
+            <img src="/public/images/section6-5.jpg" alt="Customer Logo" class="w-40 md:w-48 animate-item">
+            <img src="/public/images/section6-6.jpg" alt="Customer Logo" class="w-40 md:w-48 animate-item">
+
+        </div>
+    </section>
+
+    <section class="flex flex-col md:flex-row w-full h-[80vh]">
+
+        <!-- Left Side: Full Image -->
+        <div class="w-full md:w-1/2 h-full">
+            <img src="/public/images/section7-1.jpg" alt="Shisha Lounge"
+                class="w-full h-full object-cover animate-item">
+        </div>
+
+        <!-- Right Side: Logo + Text -->
+        <div class="w-full md:w-1/2 h-full bg-gray-300 flex flex-col justify-center items-center p-6 animate-item">
+            <img src="/public/images/logo.png" alt="Brand Logo" class="w-28 md:w-36 mb-4">
+            <h2 class="text-xl md:text-3xl font-bold text-gray-800 text-center">Product Range We Provided</h2>
+        </div>
+
+    </section>
+
+    <section class="py-16 px-6 md:px-16 text-black text-center">
+
+        <!-- Section Heading -->
+        <div class="mb-8">
+            <h2 class="text-3xl md:text-4xl font-bold animate-item">
+                <span class="text-black font-extrabold">Trendy</span> Shisha Devices
+            </h2>
+        </div>
+
+        <!-- Image Grid -->
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+
+            <img src="/public/images/section8-1.jpg" alt="Shisha Device" class="w-full h-72 rounded-lg animate-item">
+            <img src="/public/images/section8-2.jpg" alt="Shisha Device" class="w-full h-72 rounded-lg animate-item">
+            <img src="/public/images/section8-3.jpg" alt="Shisha Device" class="w-full h-72 rounded-lg animate-item">
+            <img src="/public/images/section8-4.jpg" alt="Shisha Device" class="w-full h-72 rounded-lg animate-item">
+
+        </div>
+
+
+    </section>
+
+    <section class="py-16 px-6 md:px-16">
+
+        <!-- Section Header & Model Text -->
+        <div class="flex flex-col md:flex-row justify-between items-start mb-6">
+
+            <h2 class="text-3xl md:text-4xl font-bold text-black animate-item">Shisha <br> Devices</h2>
+
+            <div class="w-full md:w-1/3 text-left animate-item">
+                <p class="text-lg font-bold">Brand Name – CWP</p>
+                <p class="text-lg"><span class="font-bold">Material -</span> Glass with Design & Stainless Steel</p>
+                <p class="text-lg"><span class="font-bold">Made in</span> Russia</p>
+            </div>
+
+
+        </div>
+
+        <!-- Grid Layout for Images -->
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+            <img src="/public/images/section9-1.jpg" alt="Shisha Device"
+                class="w-full h-72 object-cover rounded-lg animate-item">
+            <img src="/public/images/section9-2.jpg" alt="Shisha Device"
+                class="w-full h-72 object-cover rounded-lg animate-item">
+            <img src="/public/images/section9-3.jpg" alt="Shisha Device"
+                class="w-full h-72 object-cover rounded-lg animate-item">
+            <img src="/public/images/section9-4.jpg" alt="Shisha Device"
+                class="w-full h-72 object-cover rounded-lg animate-item">
+        </div>
+
+    </section>
+
+    <section class="py-16 px-6 md:px-16">
+
+        <!-- Section Header & Model Text -->
+        <div class="flex flex-col md:flex-row justify-between items-start mb-6">
+
+            <h2 class="text-3xl md:text-4xl font-bold text-black animate-item">Shisha <br> Devices</h2>
+
+            <div class="w-full md:w-1/3 text-left animate-item">
+                <p class="text-lg font-bold">Brand Name – WOOKAH</p>
+                <p class="text-lg"><span class="font-bold">Material -</span> Crystal Glass, Wooden & Stainless Steel</p>
+                <p class="text-lg"><span class="font-bold">Made in</span> Poland</p>
+            </div>
+
+
+        </div>
+
+        <!-- Single Large Image -->
+        <div class="w-full">
+            <img src="/public/images/section10-1.jpg" alt="Shisha Devices"
+                class="w-full h-auto rounded-lg animate-item">
+        </div>
+
+    </section>
+
+    <section class="py-16 px-6 md:px-16">
+
+        <!-- Section Header & Model Text -->
+        <div class="flex flex-col md:flex-row justify-between items-start mb-6">
+
+            <h2 class="text-3xl md:text-4xl font-bold text-black animate-item">Shisha <br> Devices</h2>
+
+            <div class="w-full md:w-1/3 text-left animate-item">
+                <p class="text-lg font-bold">Brand Name – COCOYAYA</p>
+                <p class="text-lg"><span class="font-bold">Material -</span> Porcelain body, glass & stainless Steel</p>
+            </div>
+
+
+        </div>
+
+        <!-- Single Large Image -->
+        <div class="w-full">
+            <img src="/public/images/section11-1.jpg" alt="Shisha Devices"
+                class="w-full h-auto rounded-lg animate-item">
+        </div>
+
+    </section>
+
+    <section class="py-16 px-6 md:px-16">
+
+        <!-- Section Header & Model Text -->
+        <div class="flex flex-col md:flex-row justify-between items-start mb-6">
+
+            <!-- Left Side: Section Title -->
+            <h2 class="text-3xl md:text-4xl font-bold text-black animate-item">Shisha <br> Devices</h2>
+
+            <!-- Right Side: Model Information -->
+            <div class="w-full md:w-1/3 text-left animate-item">
+                <p class="text-lg font-bold">Brand Name – ODUMAN</p>
+                <p class="text-lg"><span class="font-bold">Material -</span> Glass & Stainless Steel</p>
+                <p class="text-lg"><span class="font-bold">Made in</span> Turkey</p>
+            </div>
+
+        </div>
+
+        <!-- Two Images Side by Side -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <img src="/public/images/section12-1.jpg" alt="Shisha Devices Left"
+                class="w-full h-80 object-contain rounded-lg animate-item">
+            <img src="/public/images/section12-2.jpg" alt="Shisha Devices Right"
+                class="w-full h-80 object-contain rounded-lg animate-item">
+        </div>
+
+    </section>
+
+    <section class="py-16 px-6 md:px-16">
+
+        <!-- Section Header & Model Text -->
+        <div class="flex flex-col md:flex-row justify-between items-start mb-6">
+
+            <h2 class="text-3xl md:text-4xl font-bold text-black animate-item">Shisha <br> Devices</h2>
+
+            <div class="w-full md:w-1/3 text-left animate-item">
+                <p class="text-lg font-bold">Brand Name – HOOB</p>
+                <p class="text-lg"><span class="font-bold">Material -</span> Crystal Glass & Stainless Steel</p>
+                <p class="text-lg"><span class="font-bold">Made in</span> Russia</p>
+            </div>
+
+
+        </div>
+
+        <!-- Single Large Image -->
+        <div class="w-full">
+            <img src="/public/images/section13-1.jpg" alt="Shisha Devices"
+                class="w-full h-auto rounded-lg animate-item">
+        </div>
+
+    </section>
+
+    <section class="py-16 px-6 md:px-16">
+
+        <!-- Section Header & Model Info -->
+        <div class="flex flex-col md:flex-row justify-between items-start mb-6">
+
+            <!-- Left Side: Section Title -->
+            <h2 class="text-3xl md:text-4xl font-bold text-black animate-item">Shisha <br> Devices</h2>
+
+            <!-- Right Side: Model Information -->
+            <div class="w-full md:w-1/3 text-left animate-item">
+                <p class="text-lg font-bold">Brand Name – MAMAY</p>
+                <p class="text-lg"><span class="font-bold">Material -</span> Glass & Stainless Steel</p>
+                <p class="text-lg"><span class="font-bold">Made in</span> Russia</p>
+            </div>
+
+        </div>
+
+        <!-- Grid Layout for 4 Images -->
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+            <img src="/public/images/section14-1.jpg" alt="Shisha Device"
+                class="w-full h-72 object-cover rounded-lg animate-item">
+            <img src="/public/images/section14-2.jpg" alt="Shisha Device"
+                class="w-full h-72 object-cover rounded-lg animate-item">
+            <img src="/public/images/section14-3.jpg" alt="Shisha Device"
+                class="w-full h-72 object-cover rounded-lg animate-item">
+            <img src="/public/images/section14-4.jpg" alt="Shisha Device"
+                class="w-full h-72 object-cover rounded-lg animate-item">
+        </div>
+
+    </section>
+
+    <section class="py-16 px-6 md:px-16">
+
+        <!-- Section Header & Model Text -->
+        <div class="flex flex-col md:flex-row justify-between items-start mb-6">
+
+            <!-- Left Side: Section Title -->
+            <h2 class="text-3xl md:text-4xl font-bold text-black animate-item">Shisha <br> Devices</h2>
+
+            <!-- Right Side: Model Information -->
+            <div class="w-full md:w-1/3 text-left animate-item">
+                <p class="text-lg font-bold">Brand Name – Shisha Buck</p>
+                <p class="text-lg"><span class="font-bold">Material -</span> Glass & Stainless Steel</p>
+                <p class="text-lg"><span class="font-bold">Made in</span> USA</p>
+            </div>
+
+        </div>
+
+        <!-- Single Large Image -->
+        <div class="w-full">
+            <img src="/public/images/section15-1.jpg" alt="Shisha Devices"
+                class="w-full h-auto rounded-lg animate-item">
+        </div>
+
+    </section>
+
+    <section class="py-16 px-6 md:px-16">
+
+        <!-- Section Header & Model Text -->
+        <div class="flex flex-col md:flex-row justify-between items-start mb-6">
+
+            <!-- Left Side: Section Title -->
+            <h2 class="text-3xl md:text-4xl font-bold text-black animate-item">Shisha <br> Devices</h2>
+
+            <!-- Right Side: Model Information -->
+            <div class="w-full md:w-1/3 text-left animate-item">
+                <p class="text-lg font-bold">Brand Name – Customized Narguile</p>
+                <p class="text-lg"><span class="font-bold">Material -</span> Glasses</p>
+                <p class="text-lg"><span class="font-bold">Made in</span> China</p>
+            </div>
+
+        </div>
+
+        <!-- Single Large Image -->
+        <div class="w-full">
+            <img src="/public/images/section16-1.jpg" alt="Shisha Devices"
+                class="w-full h-auto rounded-lg animate-item">
+        </div>
+
+    </section>
+
+    <section class="py-16 px-6 md:px-16">
+
+        <!-- Section Header & Model Text -->
+        <div class="flex flex-col md:flex-row justify-between items-start mb-6">
+
+            <!-- Left Side: Section Title -->
+            <h2 class="text-3xl md:text-4xl font-bold text-black animate-item">Shisha <br> Devices</h2>
+
+            <!-- Right Side: Model Information -->
+            <div class="w-full md:w-1/3 text-left animate-item">
+                <p class="text-lg font-bold">Brand Name – Khaleel Mamoon</p>
+                <p class="text-lg"><span class="font-bold">Material -</span> Crystal Glass and Stainless Steel</p>
+                <p class="text-lg"><span class="font-bold">Made in</span> Egypt</p>
+            </div>
+
+        </div>
+
+        <!-- Single Large Image -->
+        <div class="w-full">
+            <img src="/public/images/section17-1.jpg" alt="Shisha Devices"
+                class="w-full h-auto rounded-lg animate-item">
+        </div>
+
+    </section>
+
+    <section class="py-16 px-6 md:px-16">
+
+        <!-- Section Content: Title & Text on Left, Image on Right -->
+        <div class="flex flex-col gap-6 md:flex-row justify-between items-center">
+
+            <!-- Left Side: Text Content -->
+            <div class="w-full md:w-1/2 text-left animate-item">
+                <h2 class="text-4xl font-bold text-black">Charcoal</h2>
+                <p class="text-xl text-gray-700 mt-2">Coconut Charcoal</p>
+
+                <ul class="mt-4 space-y-2 text-gray-700">
+                    <li>▪️ Premium quality charcoal.</li>
+                    <li>▪️ Has no smell and taste.</li>
+                    <li>▪️ Made from 100% coconut shell.</li>
+                    <li>▪️ Remains almost no residuals and less ash.</li>
+                    <li>▪️ Smoulders evenly and longer than other charcoals.</li>
+                    <li>▪️ Imported from Ukraine.</li>
+                </ul>
+            </div>
+
+            <!-- Right Side: Image -->
+            <div class="w-full md:w-1/2 mt-8 md:mt-0">
+                <img src="/public/images/section18-1.jpg" alt="Charcoal" class="w-full h-auto rounded-lg animate-item">
+            </div>
+
+        </div>
+
+    </section>
+
+    <section class="py-16 px-6 md:px-16">
+
+        <!-- Section Content: Image on Left, Text on Right -->
+        <div class="flex flex-col gap-6 md:flex-row justify-between items-center">
+
+            <!-- Left Side: Image -->
+            <div class="w-full md:w-1/2 mb-8 md:mb-0">
+                <img src="/public/images/section19-1.jpg" alt="Al Fakher Flavours"
+                    class="w-full h-auto rounded-lg animate-item">
+            </div>
+
+            <!-- Right Side: Text Content -->
+            <div class="w-full md:w-1/2 text-left animate-item">
+                <h2 class="text-2xl font-bold text-black">CLASSIC FLAVOURS</h2>
+                <p class="text-gray-700 mt-2">
+                    Your choice of single flavor tobacco from the range Al Fakher and other best-selling brands.
+                </p>
+
+                <ul class="mt-4 space-y-1 text-gray-700">
+                    <li>▪️ Kiwi</li>
+                    <li>▪️ Mint</li>
+                    <li>▪️ Grape</li>
+                    <li>▪️ Orange</li>
+                    <li>▪️ Mango</li>
+                    <li>▪️ Lemon</li>
+                    <li>▪️ Blueberry</li>
+                    <li>▪️ Strawberry</li>
+                    <li>▪️ Paan Raas</li>
+                    <li>▪️ Gum</li>
+                </ul>
+            </div>
+
+        </div>
+
+    </section>
+
+    <section class="py-16 px-6 md:px-16 bg-gray-100">
+        <!-- Section Title -->
+        <h2 class="text-3xl md:text-4xl font-bold text-center text-black mb-8 animate-item">
+            Flavor Collection
+        </h2>
+
+        <!-- Grid Layout -->
+        <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-6">
+
+            <!-- Flavor Card -->
+            <div class="bg-white rounded-lg shadow-lg p-4 text-center animate-item">
+                <img src="/public/images/section21-1.jpg" alt="Spicy Lady" class="w-full h-48 object-cover rounded-md">
+                <h3 class="text-lg font-semibold text-blue-600 mt-4">Spicy Lady</h3>
+                <p class="text-gray-700 text-sm mt-2">
+                    Bright lemon taste with a slight accent of ginger, giving freshness with candy notes.
+                </p>
+            </div>
+
+            <div class="bg-white rounded-lg shadow-lg p-4 text-center animate-item">
+                <img src="/public/images/section21-2.jpg" alt="Torpedo" class="w-full h-48 object-cover rounded-md">
+                <h3 class="text-lg font-semibold text-blue-600 mt-4">Torpedo</h3>
+                <p class="text-gray-700 text-sm mt-2">
+                    Perfect balance of ripe pear and melon flavors.
+                </p>
+            </div>
+
+            <div class="bg-white rounded-lg shadow-lg p-4 text-center animate-item">
+                <img src="/public/images/section21-3.jpg" alt="Falling Star"
+                    class="w-full h-48 object-cover rounded-md">
+                <h3 class="text-lg font-semibold text-blue-600 mt-4">Falling Star</h3>
+                <p class="text-gray-700 text-sm mt-2">
+                    Tropical cocktail of mango, passion fruit, and peachy sweetness.
+                </p>
+            </div>
+
+            <div class="bg-white rounded-lg shadow-lg p-4 text-center animate-item">
+                <img src="/public/images/section21-4.jpg" alt="Peach Club" class="w-full h-48 object-cover rounded-md">
+                <h3 class="text-lg font-semibold text-blue-600 mt-4">Peach Club</h3>
+                <p class="text-gray-700 text-sm mt-2">
+                    Pleasant ripe fruit taste with balanced sweetness.
+                </p>
+            </div>
+
+            <div class="bg-white rounded-lg shadow-lg p-4 text-center animate-item">
+                <img src="/public/images/section21-5.jpg" alt="Sweet Kick" class="w-full h-48 object-cover rounded-md">
+                <h3 class="text-lg font-semibold text-blue-600 mt-4">Sweet Kick</h3>
+                <p class="text-gray-700 text-sm mt-2">
+                    Traditional pastry taste with nougat and creamy aftertaste.
+                </p>
+            </div>
+
+        </div>
+    </section>
+
+    <section class="py-16 px-6 md:px-16 bg-gray-100">
+        <!-- Section Title -->
+        <h2 class="text-3xl md:text-4xl font-bold text-center text-black mb-8 animate-item">
+            Flavor Collection
+        </h2>
+
+        <!-- Grid Layout -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+
+            <!-- Flavor Card 1 -->
+            <div class="bg-white rounded-lg shadow-lg p-4 text-center animate-item">
+                <img src="/public/images/section22-1.jpg" alt="Overdozz Wild The Night Out"
+                    class="w-full h-48 object-cover rounded-md">
+                <h3 class="text-lg font-semibold text-blue-600 mt-4">Overdozz Wild The Night Out</h3>
+                <p class="text-gray-700 text-sm mt-2">
+                    A sweet cocktail drink with a light hint of pineapple and coconut.
+                </p>
+            </div>
+
+            <!-- Flavor Card 2 -->
+            <div class="bg-white rounded-lg shadow-lg p-4 text-center animate-item">
+                <img src="/public/images/section22-2.jpg" alt="Berry Punch" class="w-full h-48 object-cover rounded-md">
+                <h3 class="text-lg font-semibold text-blue-600 mt-4">Berry Punch</h3>
+                <p class="text-gray-700 text-sm mt-2">
+                    A complex, nuanced berry mix that will unfold differently for everyone.
+                </p>
+            </div>
+
+            <!-- Flavor Card 3 -->
+            <div class="bg-white rounded-lg shadow-lg p-4 text-center animate-item">
+                <img src="/public/images/section22-3.jpg" alt="Fantasia Colada"
+                    class="w-full h-48 object-cover rounded-md">
+                <h3 class="text-lg font-semibold text-blue-600 mt-4">Fantasia Colada</h3>
+                <p class="text-gray-700 text-sm mt-2">
+                    A sweet cocktail drink with a light hint of pineapple and coconut.
+                </p>
+            </div>
+
+            <!-- Flavor Card 4 -->
+            <div class="bg-white rounded-lg shadow-lg p-4 text-center animate-item">
+                <img src="/public/images/section22-4.jpg" alt="Honeymoon" class="w-full h-48 object-cover rounded-md">
+                <h3 class="text-lg font-semibold text-blue-600 mt-4">Honeymoon</h3>
+                <p class="text-gray-700 text-sm mt-2">
+                    A complex, nuanced berry mix that will unfold differently for everyone.
+                </p>
+            </div>
+
+        </div>
+    </section>
+
+    <section class="py-16 px-6 md:px-16 bg-gray-100">
+        <!-- Section Title -->
+        <h2 class="text-3xl md:text-4xl font-bold text-left text-black mb-4 animate-item">
+            <span class="text-blue-600">Tobacco</span>
+        </h2>
+        <p class="text-lg text-gray-700 mb-8 animate-item">- Russian and Turkish Blends</p>
+
+        <!-- Tobacco Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+
+            <!-- Tobacco Image 1 -->
+            <div class="bg-white rounded-lg shadow-lg p-4 animate-item">
+                <img src="/public/images/section23-1.jpg" alt="Russian Blend"
+                    class="w-full h-64 object-cover rounded-md">
+            </div>
+
+            <!-- Tobacco Image 2 -->
+            <div class="bg-white rounded-lg shadow-lg p-4 animate-item">
+                <img src="/public/images/section23-2.jpg" alt="Turkish Blend"
+                    class="w-full h-64 object-cover rounded-md">
+            </div>
+
+            <!-- Tobacco Image 3 -->
+            <div class="bg-white rounded-lg shadow-lg p-4 animate-item">
+                <img src="/public/images/section23-3.jpg" alt="Element Blend"
+                    class="w-full h-64 object-cover rounded-md">
+            </div>
+
+        </div>
+    </section>
+
+    <section class="py-16 px-6 md:px-16 bg-white">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+
+            <!-- Left Side: Image Grid -->
+
+
+            <!-- Right Side: Text Content -->
+            <div>
+                <h2 class="text-4xl font-bold text-gray-900 animate-item">
+                    <span class="text-blue-600">Heat</span> Management Systems
+                </h2>
+                <ul class="text-gray-700 text-lg mt-4 space-y-3 animate-item">
+                    <li>✅ Designed and engineered to regulate heat transfer from charcoal to Shisha.</li>
+                    <li>✅ Reduces ash, ultra-fine particles, and volatile gases from charcoal.</li>
+                    <li>✅ Provides a smoother and cleaner experience.</li>
+                    <li>✅ Allows controlled heat release or trapping as needed.</li>
+                </ul>
+            </div>
+
+            <div class="grid grid-cols-3 gap-4">
+                <img src="/public/images/section24-1.png" alt="Heat System 1"
+                    class="w-36 h-36 rounded-lg shadow-md animate-item">
+                <img src="/public/images/section24-2.png" alt="Heat System 2"
+                    class="w-36 h-36 rounded-lg shadow-md animate-item">
+                <img src="/public/images/section24-3.png" alt="Heat System 3"
+                    class="w-36 h-36 rounded-lg shadow-md animate-item">
+                <img src="/public/images/section24-4.png" alt="Heat System 4"
+                    class="w-36 h-36 rounded-lg shadow-md animate-item">
+                <img src="/public/images/section24-5.png" alt="Heat System 5"
+                    class="w-36 h-36 rounded-lg shadow-md animate-item">
+                <img src="/public/images/section24-6.png" alt="Heat System 6"
+                    class="w-36 h-36 rounded-lg shadow-md animate-item">
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="py-16 px-6 md:px-16 bg-cover bg-center text-white text-center"
+        style="background-image: url('public/images/section25-bg.jpg');">
+
+        <div class="max-w-3xl mx-auto">
+            <!-- Logo -->
+            <img src="/public/images/logo.png" alt="Brand Logo" class="w-28 md:w-36 mx-auto mb-6 animate-item">
+
+            <!-- Main Text -->
+            <p class="text-lg md:text-xl font-semibold animate-item">
+                We create a customer who makes customers.<br>
+                The customer who pays our bills, drives growth, defines success, <br>
+                and turns the wheels of demand and supply.
+            </p>
+
+            <!-- Contact Details -->
+            <div class="mt-6 flex flex-col md:flex-row justify-center items-center gap-4 text-lg font-medium">
+                <a href="tel:+971521977431" class="hover:text-cyan-400 transition duration-300">
+                    📞 +971 52 197 7431
+                </a>
+                <a href="mailto:Hospitality2u@Gmail.com" class="hover:text-cyan-400 transition duration-300">
+                    📧 Hospitality2u@Gmail.com
+                </a>
+            </div>
+        </div>
+
+    </section>
+
+
+
+
+
+    <script>
+        // GSAP Animation for Hero Section
+        gsap.from(".absolute img", { opacity: 0, scale: 0.5, duration: 1.5, ease: "power2.out" });
+
+        // jQuery Scroll Effect
+        $("nav ul li a").on("click", function (event) {
+            if (this.hash !== "") {
+                event.preventDefault();
+                let hash = this.hash;
+                $('html, body').animate({ scrollTop: $(hash).offset().top }, 800);
+            }
+        });
+
+        // Mobile Menu Toggle
+        $("#menu-btn").on("click", function () {
+            $("#mobile-menu").toggleClass("hidden");
+        });
+
+        // GSAP Scroll Animations for Individual Items
+        gsap.utils.toArray(".animate-item").forEach((item) => {
+            gsap.to(item, {
+                opacity: 1,
+                y: 0,
+                duration: 1.2,
+                ease: "power2.out",
+                scrollTrigger: {
+                    trigger: item,
+                    start: "top 90%",
+                    toggleActions: "play none none none"
+                }
+            });
+        });
+
+
+        gsap.from(".offer-card", {
+            opacity: 0,
+            y: 50,
+            duration: 1,
+            stagger: 0.2,
+            ease: "power3.out",
+            scrollTrigger: {
+                trigger: ".offer-card",
+                start: "top 85%",
+                toggleActions: "play none none none"
+            }
+        });
+    </script>
+</body>
+
+</html>
